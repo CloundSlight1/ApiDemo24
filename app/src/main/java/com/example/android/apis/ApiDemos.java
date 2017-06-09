@@ -148,9 +148,9 @@ public class ApiDemos extends ListActivity {
         Intent intent = new Intent((Intent) map.get("intent"));
         intent.addCategory(Intent.CATEGORY_SAMPLE_CODE);
         Bundle bundle = intent.getExtras();
-        Log.d("apis", "" + intent.getComponent());
+        Log2.d(getClass().getSimpleName(), "comp: %s", intent.getComponent());
         if (bundle != null && !bundle.isEmpty())
-            Log.d("apis", intent.getExtras().toString());
+            Log2.d(getClass().getSimpleName(), "extra: %s", intent.getExtras());
         startActivity(intent);
     }
 }

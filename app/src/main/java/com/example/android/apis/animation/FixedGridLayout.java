@@ -17,8 +17,11 @@
 package com.example.android.apis.animation;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.android.apis.Log2;
 
 /**
  * A layout that arranges its children in a grid.  The size of the
@@ -52,6 +55,9 @@ public class FixedGridLayout extends ViewGroup {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        Log2.d(getClass().getSimpleName(), "onMeasure w[%d %d] h[%d %d] %s",
+                MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.getMode(widthMeasureSpec),
+                MeasureSpec.getSize(heightMeasureSpec), MeasureSpec.getMode(heightMeasureSpec), getResources().getDisplayMetrics());
         int cellWidthSpec = MeasureSpec.makeMeasureSpec(mCellWidth,
                 MeasureSpec.AT_MOST);
         int cellHeightSpec = MeasureSpec.makeMeasureSpec(mCellHeight,

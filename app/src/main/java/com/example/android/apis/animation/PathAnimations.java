@@ -36,6 +36,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
+import com.example.android.apis.Log2;
 import com.example.android.apis.R;
 
 /**
@@ -229,6 +230,8 @@ public class PathAnimations extends Activity implements
                 float scaleHeight = (bottom - top) / TRAVERSE_PATH_SIZE;
                 scale.setScale(scaleWidth, scaleHeight);
                 sTraversalPath.transform(scale, mPath);
+                Log2.d(getClass().getSimpleName(), "onLayout sw %.1f, sh %.1f",
+                        scaleWidth, scaleHeight);
             }
         }
 

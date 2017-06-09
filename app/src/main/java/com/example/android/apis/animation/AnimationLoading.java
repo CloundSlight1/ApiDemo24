@@ -143,7 +143,6 @@ public class AnimationLoading extends Activity {
                 animation = new AnimatorSet();
                 ((AnimatorSet) animation).playTogether(anim, fader, seq, colorizer, animPvh,
                         animPvhKf, faderKf, animPvhKfInterpolated);
-
             }
         }
 

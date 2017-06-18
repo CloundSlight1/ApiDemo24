@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingTop="4dp"
-        android:paddingBottom="4dp"></LinearLayout>
+        android:paddingBottom="4dp" />
 
     <!-- Alert dialog style buttons along the bottom. -->
     <LinearLayout

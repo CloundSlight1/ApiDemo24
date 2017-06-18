@@ -17,19 +17,19 @@
      See corresponding Java code com.android.sdk.app.LocalSerice.java. -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="4dip"
-    android:gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="4dip">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/activity_animation_msg" />
+        android:text="@string/activity_animation_msg"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/fade_animation"
@@ -44,7 +44,7 @@
         android:id="@+id/zoom_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_animation_zoom"></Button>
+        android:text="@string/activity_animation_zoom" />
 
     <Button
         android:id="@+id/modern_fade_animation"
@@ -59,24 +59,24 @@
         android:id="@+id/modern_zoom_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_modern_animation_zoom"></Button>
+        android:text="@string/activity_modern_animation_zoom"/>
 
     <Button
         android:id="@+id/scale_up_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_scale_up_animation"></Button>
+        android:text="@string/activity_scale_up_animation"/>
 
     <Button
         android:id="@+id/zoom_thumbnail_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_zoom_thumbnail_animation"></Button>
+        android:text="@string/activity_zoom_thumbnail_animation"/>
 
     <Button
         android:id="@+id/no_animation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_no_animation"></Button>
+        android:text="@string/activity_no_animation"/>
 </LinearLayout>
 

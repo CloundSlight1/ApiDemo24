@@ -16,17 +16,22 @@
 
 package com.example.android.apis.app;
 
+import android.Manifest;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.database.CharArrayBuffer;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract.Contacts;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.QuickContactBadge;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.apis.R;
 
@@ -55,6 +60,16 @@ public class QuickContactsDemo extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[] {Manifest.permission.READ_CONTACTS},
+                    1);
+        } else {
+            readContacts();
+        }
+    }
+
+    private void readContacts() {
         String select = "((" + Contacts.DISPLAY_NAME + " NOTNULL) AND ("
                 + Contacts.HAS_PHONE_NUMBER + "=1) AND ("
                 + Contacts.DISPLAY_NAME + " != '' ))";
@@ -64,7 +79,6 @@ public class QuickContactsDemo extends ListActivity {
         startManagingCursor(c);
         ContactListItemAdapter adapter = new ContactListItemAdapter(this, R.layout.quick_contacts, c);
         setListAdapter(adapter);
-
     }
 
     private final class ContactListItemAdapter extends ResourceCursorAdapter {
@@ -100,5 +114,14 @@ public class QuickContactsDemo extends ListActivity {
         public TextView nameView;
         public QuickContactBadge photoView;
         public CharArrayBuffer nameBuffer = new CharArrayBuffer(128);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "no permission: " + permissions[0], Toast.LENGTH_SHORT).show();
+            return;
+        }
+        readContacts();
     }
 }

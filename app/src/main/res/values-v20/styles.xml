@@ -15,11 +15,11 @@
 
 <resources>
     <!-- For API level XX or later, the Material theme is available and we prefer that. -->
-    <style name="ThemeCurrent" parent="android:Theme.Material.Light"></style>
+    <style name="ThemeCurrent" parent="android:Theme.Material.Light"/>
 
     <!-- For API level XX or later, the Holo theme is available and we prefer that. -->
-    <style name="ThemeCurrentDialog" parent="android:Theme.Material.Light.Dialog"></style>
+    <style name="ThemeCurrentDialog" parent="android:Theme.Material.Light.Dialog"/>
 
     <!-- For API level XX or later, we can use the magical DialogWhenLarge theme. -->
-    <style name="ThemeCurrentDialogWhenLarge" parent="android:style/Theme.Material.Light.DialogWhenLarge"></style>
+    <style name="ThemeCurrentDialogWhenLarge" parent="android:style/Theme.Material.Light.DialogWhenLarge"/>
 </resources>
